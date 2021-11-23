@@ -28,9 +28,10 @@ namespace NettworkAkademi_N047_MetotOrnek2
          */
 
         #endregion
-        baslangıc:
+        
 
-            Matematik M = new Matematik();           
+            Matematik M = new Matematik();
+        baslangıc:
             M.menuHazirla();
             int kullanıcıSecim = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Lütfen 1. sayı degerini giriniz.");
@@ -57,6 +58,12 @@ namespace NettworkAkademi_N047_MetotOrnek2
                     sonuc = M.bolmeIslemi(kullanıcıSayi1, kullanıcıSayi2);
                     M.sonucEkranaYaz(kullanıcıSayi1, kullanıcıSayi2, sonuc, "/");
                     break;
+                default:
+                    Console.WriteLine("Belirtmiş oldugunuz deger liste icerisinde bulunamadı.");
+                    Console.WriteLine("Lütfen tekrar deneyiniz.");
+                    System.Threading.Thread.Sleep(2000);
+                    goto baslangıc;
+
 
 
             }
