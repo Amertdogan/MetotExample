@@ -29,31 +29,33 @@ namespace NettworkAkademi_N047_MetotOrnek2
 
         #endregion
         baslangıc:
-            
 
-            int secim = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Bir sayı giriniz.");
-            int sayı1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Bir sayı daha giriniz.");
-            int sayı2 = Convert.ToInt32(Console.ReadLine());
-            switch (secim)
+            Matematik M = new Matematik();           
+            M.menuHazirla();
+            int kullanıcıSecim = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Lütfen 1. sayı degerini giriniz.");
+            decimal kullanıcıSayi1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Lütfen 2. sayı degerini giriniz.");
+            decimal kullanıcıSayi2 = Convert.ToInt32(Console.ReadLine());
+            decimal sonuc = 0;
+            switch (kullanıcıSecim)
 
             {
                 case 1:
-                    int toplama = sayı1 + sayı2;
-                    Console.WriteLine("Toplama sonucu " + toplama);
+                    sonuc = M.toplamaIslemi(kullanıcıSayi1, kullanıcıSayi2);
+                    M.sonucEkranaYaz(kullanıcıSayi1, kullanıcıSayi2, sonuc, "+");
                     break;
                 case 2:
-                    int cikartma = sayı1 - sayı2;
-                    Console.WriteLine("Çıkartma sonucu " + cikartma);
+                    sonuc = M.cikartmaIslemi(kullanıcıSayi1, kullanıcıSayi2);
+                    M.sonucEkranaYaz(kullanıcıSayi1, kullanıcıSayi2, sonuc, "-");
                     break;
                 case 3:
-                    int carpma = sayı1 * sayı2;
-                    Console.WriteLine("Çarpma sonucu " + carpma);
+                    sonuc = M.carpmaIslemi(kullanıcıSayi1, kullanıcıSayi2);
+                    M.sonucEkranaYaz(kullanıcıSayi1, kullanıcıSayi2, sonuc, "x");
                     break;
                 case 4:
-                    int bolme = sayı1 / sayı2;
-                    Console.WriteLine("Bölme sonucu " + bolme);
+                    sonuc = M.bolmeIslemi(kullanıcıSayi1, kullanıcıSayi2);
+                    M.sonucEkranaYaz(kullanıcıSayi1, kullanıcıSayi2, sonuc, "/");
                     break;
 
 
